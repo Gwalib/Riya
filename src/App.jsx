@@ -25,11 +25,11 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Riya Angira",
-  title: "Android | Development |Machine Learning",
+  title: "Android | Development | Machine Learning",
   email: "ramriya740@gmail.com",
-  gitHub: "https://github.com/Gwalib",
+  gitHub: "Gwalib",
   instagram: "",
-  linkedIn: "https://www.linkedin.com/in/riya-angira-0051441bb/",
+  linkedIn: "riya-angira-0051441bb/",
   medium: "",
   twitter: "",
   youTube: "",
