@@ -1,23 +1,14 @@
-/**
- * Footer component
- *
- * Displays avenues to contact you.
- * Contact information is passed in from the App component that
- * renders the Footer.
- *
- * If a social value has an empty string it will not be displayed.
- */
 import React from "react";
 import PropTypes from "prop-types";
 
-import devDotToIcon from "../images/socials/devdotto.svg";
-import envelopeIcon from "../images/socials/envelope.svg";
-import gitHubIcon from "../images/socials/github.svg";
-import instagramIcon from "../images/socials/instagram.svg";
-import linkedInIcon from "../images/socials/linkedin.svg";
-import mediumIcon from "../images/socials/medium.svg";
-import twitterIcon from "../images/socials/twitter.svg";
-import youTubeIcon from "../images/socials/youtube.svg";
+import devDotToIcon from "url:../images/socials/devdotto.svg";
+import envelopeIcon from "url:../images/socials/envelope.svg";
+import gitHubIcon from "url:../images/socials/github.svg";
+import instagramIcon from "url:../images/socials/instagram.svg";
+import linkedInIcon from "url:../images/socials/linkedin.svg";
+import mediumIcon from "url:../images/socials/medium.svg";
+import twitterIcon from "url:../images/socials/twitter.svg";
+import youTubeIcon from "url:../images/socials/youtube.svg";
 
 /**
  * 💡 Learning resources
@@ -41,29 +32,26 @@ const Footer = (props) => {
   } = props;
 
   return (
-    <div
-      id="footer"
+      <div id="footer"
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "2.5rem",
+        // display: "flex",
+        // flexDirection: "column",
+        // alignItems: "center",
+        // gap: "2.5rem",
         padding: "5rem 0 3rem",
         backgroundColor: primaryColor,
-        width: "100vw",
+        // width: "100vw",
+        color: "white"
       }}
+      className="w-full py-8 px-4"
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2.5rem",
-        }}
-      >
+       
+      <div className="footer-icons" > 
+      
         {email && (
-          <a href={`mailto:${email}`}>
+          <a href={`mailto:${email}`} className="flex items-center gap-2 hover:underline">
             <img src={envelopeIcon} alt="email" className="socialIcon" />
-          </a>
+            </a>
         )}
         {devDotTo && (
           <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
@@ -112,10 +100,15 @@ const Footer = (props) => {
             <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
           </a>
         )}
+      
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
-        Created by {name}
+      <p className="small" style={{ marginTop: 50, color: "white" , textAlign: "center"}}>
+        Created by {name}  (●'◡'●)
       </p>
+      {/* <p style={{ marginTop: 0, color: "black", textAlign: "center" }}>
+  Debug — footer mounted. Created by: {name || "NO NAME PASSED"}
+</p> */}
+
     </div>
   );
 };

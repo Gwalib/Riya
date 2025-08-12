@@ -1,50 +1,25 @@
-/**
- * Home component
- *
- * The section at the top of the page to display image of your
- * choice, name and title that describes your career focus.
- */
 
 import React from "react";
-import arrowSvg from "../images/down-arrow.svg";
+import arrowSvg  from "url:../images/down-arrow.svg";
+// import { ReactComponent as ArrowIcon } from 'url:../images/down-arrow.svg';
 import PropTypes from "prop-types";
-
-/**
- * Home background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use.Then, set imageAltText to string that * represents what you see in that image.
- *
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/Home_pic.jpg";
 
 const imageAltText = "Android, Machine Learning, Software with mix of nature.";
 
-const Home = ({ name, title }) => {
-  return (
-    <section id="home" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div
-        style={{
-          position: "absolute",
-          top: "5rem",
-          left: "2rem",
-          width: "80rem",
-          textAlign: "center",
-        }}
-      >
-        <h1>{name}</h1>
-        <h2 style={{ marginTop: "10rem" }}>{title}</h2>
-      </div>
-      <div style={{ position: "absolute", bottom: "50rem", left: "50%" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "10rem" }} alt={imageAltText} />
-      </div>
+const Home = ({ name, title }) => (
+  
+    <section id="home" className="home-section">     
+         <div className="home-content">
+          <h1>{name}</h1>
+          <h2>{title}</h2>       
+          <div className="home-arrow">
+            {/* <ArrowIcon className="w-6 h-6 text-black fill-current animate-bounce" /> */}
+            <img src={arrowSvg}  alt="Scroll Down Arrow" className="w-6 h-6 bounce" />
+        </div>
+      </div>           
     </section>
+    
   );
-};
 
 Home.defaultProps = {
   name: "",

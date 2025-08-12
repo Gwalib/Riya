@@ -26,7 +26,7 @@ import "./styles.css";
 const siteProps = {
   name: "Riya Angira",
   title: "Android | Development | Machine Learning",
-  email: "ramriya740@gmail.com",
+  email: "riya017mtcse24@igdtuw.ac.in",
   gitHub: "Gwalib",
   instagram: "",
   linkedIn: "riya-angira-0051441bb/",
@@ -40,11 +40,13 @@ const secondaryColor = "#E6FFCC"; /*"#D2F1E4"*/
 
 const App = () => {
   return (
-    <div id="main">
+    <div id="app-container">
       <Header />
+      <main className="main-content">
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Portfolio />
+      </main>
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>
   );

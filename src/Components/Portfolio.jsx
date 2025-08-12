@@ -9,7 +9,7 @@
  */
 
 import React from "react";
-
+//Tip: For projects without URLs, it just renders a plain heading. Otherwise, it links out.
 /**
  * Desk image
  *
@@ -19,7 +19,7 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/desk_pic.jpg";
+import deskPic from "url:../images/desk_pic.jpg"
 
 const imageAltText = "desktop with books and laptop";
 
@@ -59,10 +59,12 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
+      <div className="portfolio-container">
+        {/* style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }} */}
+        <div className="portfolio-image">
+          {/* style={{ maxWidth: "40%", alignSelf: "center" }} */}
           <img
-            src={image}
+            src={deskPic} 
             style={{ height: "100%", width: "100%", objectFit: "cover" }}
             alt={imageAltText}
           />
@@ -71,9 +73,10 @@ const Portfolio = () => {
           {projectList.map((project) => (
             <div className="box" key={project.title}>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
+                <h3>{project.title}</h3>
+                {/* style={{ flexBasis: "40px" }} */}
+              </a>              
+            <p className="small">{project.description}</p>
             </div>
           ))}
         </div>

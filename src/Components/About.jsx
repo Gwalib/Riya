@@ -15,7 +15,7 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a image you
  * freely use on your site.
  */
-import image from "../images/About_pic.jpg";
+// import aboutPic from "../../images/About_pic.jpg";
 
 const imageAltText = "purple and yellow abstract background";
 
@@ -27,16 +27,21 @@ const description =
 
 /**
  * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
+ * passionate about, or enjoy,  Technologies: Android, AI, Machine Learning, Deep Learning, NLP…. 
+Languages: JAVA, C++, C, KOTLIN, PYTHON 
+Data Markup Standard: XML 
+IDE: Intellij idea, Visual Studio, Visual Studio Code, Android Studio, Google Collab 
+Tools and others: Github, Git, SQL, Flask, Firebase, SpaCy, NLTK, Watson.ai 
+Frameworks: Tensorflow, Scikit, Sklearn, Pytorch, Keras 
  */
 const skillsList = [
-  "Android Mobile Development",
-  "Machine Learning",
+  "Android Mobile Development","AI, Machine Learning", "Deep Learning", "NLP",
   "Java, Python, C++, Kotlin, C ",
   "XML, SQL",
-  "Git, GitHub",
-  "",
-];
+  "Intellij idea, Visual Studio","Visual Studio Code, Android Studio, Google Colab",
+  "Git, GitHub, Flask, Firebase","SpaCy, NLTK, Watson.ai ",
+  "Tensorflow, Scikit, Sklearn, Pytorch, Keras "
+  ];
 
 /**
  * Use this to give more information about what you are passionate about,
@@ -44,12 +49,20 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am a passionate learner. I aspire to create meaningful impact by solving real-world problems.";
+  "A passionate learner aspiring to create meaningful impact by solving real-world problems.";
 
-const About = () => {
-  return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
+const About = () => (
+  
+    <section className="about-section" id="about"
+    // style={{
+    //   backgroundImage: `url("/images/About_pic.jpg")`,
+    //    backgroundSize: "cover",
+    //    backgroundPosition: "center",
+    // }}
+    >
+      <div className="about-content">
+         
+      {/* <img className="background" src={image} alt={imageAltText} />
       <div
         style={{
           backgroundColor: "white",
@@ -58,28 +71,29 @@ const About = () => {
           margin: "3rem auto",
           textAlign: "center",
         }}
-      >
+      > */}
         <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        <ul
-          style={{
+        <p>{description}</p>
+        {/* <hr /> */}
+        <ul className="about-skills">
+          {/* style={{
             textAlign: "left",
             columns: 2,
             fontSize: "1.25rem",
             margin: "2rem 3rem",
             gap: "3rem",
-          }}
-        >
+          }} */}
+        
           {skillsList.map((skill) => (
             <li key={skill}>{skill}</li>
           ))}
         </ul>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        {/* <hr /> */}
+        <p className="about-quote">{detailOrQuote}</p>
+        {/* style={{ padding: "1rem 3rem 0" }} */}
       </div>
     </section>
-  );
-};
+  
+);
 
 export default About;
